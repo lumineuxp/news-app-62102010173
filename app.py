@@ -22,7 +22,7 @@ def home():
         city = 'bangkok'
     weather = get_weather(city, OPEN_WEATHER_KEY)
     topic = 'covid-19'
-    news = get_news(topic, NEWS_KEY,4)
+    news = get_news(topic, NEWS_KEY,5)
     return render_template("home.html", weather=weather, news=news)
 
 @app.route('/news')
