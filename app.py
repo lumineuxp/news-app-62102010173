@@ -41,7 +41,7 @@ def about():
 
 def get_weather(city,API_KEY):
     query = quote(city)
-    url = OPEN_WEATHER_URL.format(city, API_KEY)
+    url = OPEN_WEATHER_URL.format(query, API_KEY)
     data = urlopen(url).read()
     parsed = json.loads(data)
     weather = None
@@ -69,7 +69,7 @@ def get_weather(city,API_KEY):
 
 def get_news(topic,API_KEY,nums):
     query = quote(topic)
-    url = NEWS_URL.format(topic, API_KEY)
+    url = NEWS_URL.format(query, API_KEY)
     data = urlopen(url).read()
     parsed = json.loads(data)
     news = []

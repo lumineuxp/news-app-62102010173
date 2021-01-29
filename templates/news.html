@@ -2,9 +2,9 @@
 
 <h1>News</h1>
 <p class="lead">You can search another topic do you want in here.</p>
-<form>
-    <input type="text" name="topic" placeholder="topic search">
-    <input type="submit" value="Submit">
+<form class="form-inline">
+    <input type="text" name="topic" class="form-control mb-2 mr-sm-2" placeholder="topic search">
+    <button type="submit" class="btn mb-2">Submit</button>
 </form>
 <p>Result for: {{topic}}</p>
 {% for n in news %}

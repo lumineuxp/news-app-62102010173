@@ -14,15 +14,21 @@
             <img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png">
             <p>{{weather.description}}</p>
         </div>
-        <div class="col-2">
-            <p> {{weather.temperature}}&#8451</p>
-            <p> pressure: {{weather.pressure}} hPa </p>
-            <p> humidity: {{weather.humidity}} % </p>
-            <p> wind speed: {{weather.windsp}} m/s </p>
-        </div>
-        <div class="col-4"></div>
+        <div class="col-3">
 
-    </div>
+            <p class="mx-auto" style="width:150px;background-color:#ffb89e"> {{weather.temperature}}&#8451</p>
+
+            <p class="mx-auto" style="width:150px;background-color:#ffc7b2"> pressure: {{weather.pressure}} hPa </p>
+
+
+            <p class="mx-auto" style="width:150px;background-color:#ffb89e"> humidity: {{weather.humidity}} % </p>
+
+            <p class="mx-auto" style="width:150px;background-color:#ffc7b2"> wind speed: {{weather.windsp}} m/s </p>
+
+        </div>
+        <div class="col-3"></div>
+
+    </div><br>
 </center>
 <h2>Covid-19 Today</h2><br> {% for n in news %}
 <div class="row">
@@ -32,8 +38,8 @@
         <img src="{{n.urlToImage}}" class="img-fluid"> {%endif%}
     </div>
     <div class="col-6">
-        <h5><a href="{{n.url}}">{{n.title}}</a></h5>
+        <h5><a href="{{n.url}}" style="color:black">{{n.title}}</a></h5>
         <p>{{n.description}} <a href="{{n.url}}">(read more)</a></p>
     </div>
 </div>
-{% endfor %} {% endblock %}
+<hr> {% endfor %} {% endblock %}

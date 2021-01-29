@@ -9,6 +9,12 @@
         nav a {
             color: white
         }
+        
+        .btn {
+            color: #fff;
+            background-color: rgb(236, 121, 79);
+            border-color: coral
+        }
     </style>
 
     <body>
@@ -18,7 +24,11 @@
         <div class="container" style="margin-top:40px">
             {% block body %}{% endblock %}
         </div>
-
+        <footer>
+            <div class="jumbotron" style="background-color: coral;">
+                <p style="text-align: center;color: white;">&copy 2020 papapin supmee</p>
+            </div>
+        </footer>
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
