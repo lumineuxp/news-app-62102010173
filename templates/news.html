@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %} {% block body %}
+
+<h1>News</h1>
+<p class="lead">You can search another topic do you want in here.</p>
+<form>
+    <input type="text" name="topic" placeholder="topic search">
+    <input type="submit" value="Submit">
+</form>
+<p>Result for: {{topic}}</p>
+{% for n in news %}
+<div class="row">
+    <div class="col-10">
+        <h5><a href="{{n.url}}">{{n.title}}</a></h5>
+        <p>{{n.description}} <a href="{{n.url}}">(read more)</a></p>
+        <hr>
+    </div>
+</div>
+{% endfor %} {% endblock %}

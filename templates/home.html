@@ -1,0 +1,39 @@
+{% extends 'base_layout.html' %} {% block body %}
+<center>
+    <h1>{{weather.city}}, {{weather.country}}</h1>
+
+    <form class="form-inline justify-content-center">
+        <input type="text" name="city" class="form-control mb-2 mr-sm-2" placeholder="weather search">
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </form>
+
+    <div class="row">
+
+        <div class="col-4"></div>
+        <div class="col-2">
+            <img src="http://openweathermap.org/img/wn/{{weather.icon}}@2x.png">
+            <p>{{weather.description}}</p>
+        </div>
+        <div class="col-2">
+            <p> {{weather.temperature}}&#8451</p>
+            <p> pressure: {{weather.pressure}} hPa </p>
+            <p> humidity: {{weather.humidity}} % </p>
+            <p> wind speed: {{weather.windsp}} m/s </p>
+        </div>
+        <div class="col-4"></div>
+
+    </div>
+</center>
+<h2>Covid-19 Today</h2><br> {% for n in news %}
+<div class="row">
+    <div class="col-4">
+        {% if n.urlToImage == None %}
+        <div style="height: 200px; background: #aaa;text-align: center;">No Image</div> {% else %}
+        <img src="{{n.urlToImage}}" class="img-fluid"> {%endif%}
+    </div>
+    <div class="col-6">
+        <h5><a href="{{n.url}}">{{n.title}}</a></h5>
+        <p>{{n.description}} <a href="{{n.url}}">(read more)</a></p>
+    </div>
+</div>
+{% endfor %} {% endblock %}
